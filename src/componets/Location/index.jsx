@@ -12,6 +12,7 @@ class Location extends React.Component {
         this.getInformation = this.getInformation.bind(this);
     }
 
+    
     getInformation() {
         const { postcode } = this.state;
 

@@ -1,33 +1,46 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, FormControl, Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
+
+// import { Switch, Route } from 'react-router-dom';
 
 class Menu extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            menuList: [{ sort: 0, title: 'HOME', url: '/' },
+            { sort: 1, title: 'CAKES', url: '/' },
+            { sort: 2, title: 'CONTACT', url: '/' }]
         }
     }
 
+    toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
+
+    sortMenu(ar) {
+        return ar.sort(function (a, b) { return a.sort - b.sort });
+    }
+
     render() {
+        this.state.menuList.sort(function (a, b) { return a.sort - b.sort })
+
         return (
-            <div>menu</div>
-            // <Navbar bg="light" expand="lg">
-            //     <Navbar.Brand href="#home">FUN HOME BAKERY</Navbar.Brand>
-            //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            //     <Navbar.Collapse id="basic-navbar-nav">
-            //         <Nav className="mr-auto">
-            //             <Nav.Link href="#home">Home</Nav.Link>
-            //             <Nav.Link href="#cakes">CAKES</Nav.Link>
-            //             <Nav.Link href="#contact">CONTACT</Nav.Link>
-            //         </Nav>
-            //         <Form inline>
-            //             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            //             <Button variant="outline-success">Search</Button>
-            //         </Form>
-            //     </Navbar.Collapse>
-            // </Navbar>
+            <React.Fragment>
+                <Navbar>
+                    <Navbar.Brand href="#home">FUN HOME BAKERY</Navbar.Brand>
+                    {this.state.menuList.map(list => <Link key={list.sort} to={list.url} className="nav-link">{list.title}</Link>)}
+                    {/* <Navbar.Toggle />
+                    <Navbar.Collapse className="justify-content-end" >
+                        <Navbar.Text>
+                            Signed in as: <a href="#login">Mark Otto</a>
+                        </Navbar.Text>
+                    </Navbar.Collapse> */}
+                    <Form inline>
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                        <Button variant="primary">Search</Button>
+                    </Form>
+                </Navbar>
+            </React.Fragment>
 
         )
     }

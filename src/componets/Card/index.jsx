@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
-import { MenuItem, DropdownButton, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'react-bootstrap';
-
+import React from 'react';
 
 class Card extends React.Component {
     constructor(props) {
         super(props);
         this.state = { isOpen: false };
-
     }
 
-    handleChange = () => {
-        var val = 'someValue';
-        this.setState({ btnTitle: val });
-
-    }
+    // handleChange = () => {
+    //     var val = 'someValue';
+    //     this.setState({ btnTitle: val });
+    // }
 
     toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
+
+    // createCount = () => {
+    //     console.log(this.props.count);
+    //     let child = [];
+    //     for (let i = 0; i < this.props.count; i++) {
+    //         child.push(<a className="dropdown-item" href="">i</a>)
+    //     }
+    //     if (this.props.count <= 0)
+    //         child.push(<a className="dropdown-item" href="">i</a>)
+ 
+
+    //     return child;
+    // }
+
     render() {
         const menuClass = `dropdown-menu${this.state.isOpen ? " show" : ""}`;
+
+
         return (
-            // <div className="col-md-4">
-            //     <img src={this.props.imgUrl}></img>
-            // </div>
-            // <div className="card-deck">
+
             <div className="col mb-4">
                 {/* <div className="card" style={{ width: "18rem" }}> */}
                 <div className="card h-100">
@@ -43,6 +52,7 @@ class Card extends React.Component {
                                 Dropdown
                             </button>
                             <div className={menuClass} aria-labelledby="dropdownMenuButton">
+                                {/* {this.createCount} */}
                                 <a className="dropdown-item" href="#nogo">
                                     Item 1          </a>
                                 <a className="dropdown-item" href="#nogo">
