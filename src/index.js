@@ -14,9 +14,10 @@ import 'popper.js';
 // import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
 
-ReactDOM.render(  <BrowserRouter><Menu /></BrowserRouter>, document.getElementById('nav'));
+// ReactDOM.render(  <BrowserRouter><Menu /></BrowserRouter>, document.getElementById('nav'));
 // ReactDOM.render(<Menu />, document.getElementById('nav'));
-ReactDOM.render(<App />, document.getElementById('content'));
+// ReactDOM.render(<App />, document.getElementById('content'));
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('content'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
