@@ -43,7 +43,7 @@ class Card extends React.Component {
             <div className="col mb-4">
                 {/* <div className="card" style={{ width: "18rem" }}> */}
                 <div className="card h-100">
-                    <img src={this.props.imgUrl} className="h-50 card-img-top img-fluid" alt="..." />
+                    <img src={require('../../assets/img/cakes/'+this.props.imgUrl +'.png')} className="h-50 card-img-top img-fluid" alt="..." />
                     <div className="card-body" style={{ textAlign: "center" }}>
                         {/* <h5 >{this.props.title}</h5> */}
                         <h5 className="card-title">{this.props.title}</h5>

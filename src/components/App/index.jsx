@@ -4,38 +4,6 @@ import Location from '../Location';
 import Home from '../Home';
 import Menu from '../Menu';
 
-
-import { Link } from 'react-router-dom';
-
-function updatePage() {
-    const [currentPage, setPage] = ('home');
-    let returnElement = ``;
-
-    // useEffect(()=>{
-    //     document.title = `You clicked ${currentPage} times`;
-    //     switch ({currentPage}) {
-    //         case 'home':
-    //             console.log("render : home");
-    //             returnElement  = <React.Fragment>{this.state.homeElements.map(detail => <Home key={"home"} title={detail.title} describe={detail.describe}></Home>)};{this.state.homeElements.map(detail => <Home></Home>)};</React.Fragment> ;
-    //             break ;
-    //             // return <React.Fragment>{this.state.homeElements.map(detail => <Home key={"home"} title={detail.title} describe={detail.describe}></Home>)};{this.state.homeElements.map(detail => <Home></Home>)};</React.Fragment>
-    //         case 'cakes':
-    //             console.log("render : cakes");
-    //             // return ;
-    //             // console.log(this.state.bakery);
-    //             returnElement =  <div className="row row-cols-1 row-cols-md-3">{this.state.bakery.map(product => <Card key={product.backeryId} imgUrl={product.img} title={product.title} price={product.price} size={product.size} count={product.count}></Card>)}<Location></Location></div>;
-    //             break ;
-    //             // return <div className="row row-cols-1 row-cols-md-3">{this.state.bakery.map(product => <Card key={product.backeryId} imgUrl={product.img} title={product.title} price={product.price} size={product.size} count={product.count}></Card>)}<Location></Location></div>;
-    //         default:
-    //             console.log("render : default");
-    //             returnElement=<div>default</div>;
-    //             break ;
-    //     }
-    // });
-
-    return (returnElement)
-}
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -59,30 +27,21 @@ class App extends React.Component {
         }
     }
 
-    componentDidMount() {
 
-    }
-
-    pages() {
-        const [page, setPage] = useState([]);
-    }
-
-    renderSwitch(param) {
-        switch (param) {
-            case 'home':
-                console.log("render : home");
-                return <React.Fragment>{this.state.homeElements.map(detail => <Home key={"home"} title={detail.title} describe={detail.describe}></Home>)};{this.state.homeElements.map(detail => <Home></Home>)};</React.Fragment>
-            case 'cakes':
-                console.log("render : cakes");
-                console.log(this.state.bakery);
-                return <div className="row row-cols-1 row-cols-md-3">{this.state.bakery.map(product => <Card key={product.backeryId} imgUrl={product.img} title={product.title} price={product.price} size={product.size} count={product.count}></Card>)}<Location></Location></div>;
-            default:
-                console.log("render : default");
-
-
-                return '';
-        }
-    }
+    // renderSwitch(param) {
+    //     switch (param) {
+    //         case 'home':
+    //             console.log("render : home");
+    //             return <React.Fragment>{this.state.homeElements.map(detail => <Home key={"home"} title={detail.title} describe={detail.describe}></Home>)};{this.state.homeElements.map(detail => <Home></Home>)};</React.Fragment>
+    //         case 'cakes':
+    //             console.log("render : cakes");
+    //             console.log(this.state.bakery);
+    //             return <div className="row row-cols-1 row-cols-md-3">{this.state.bakery.map(product => <Card key={product.backeryId} imgUrl={product.backeryId} title={product.title} price={product.price} size={product.size} count={product.count}></Card>)}<Location></Location></div>;
+    //         default:
+    //             console.log("render : default");
+    //             return '';
+    //     }
+    // }
 
     sortMenu(ar) {
         return ar.sort(function (a, b) { return a.sort - b.sort });
@@ -93,7 +52,6 @@ class App extends React.Component {
 
         return (
             <React.Fragment>
-           
                 <div id="nav">
                     <Menu listArarry={this.state.menuList} switchHandler={this.renderSwitch}></Menu>
                     {/* <Menu listArarry={this.state.menuList}></Menu> */}
@@ -107,7 +65,10 @@ class App extends React.Component {
                     </Navbar> */}
                 </div>
                 <div className="container">
-                    {this.renderSwitch(this.state.currentPage)}
+                    <div className="row row-cols-1 row-cols-md-3">{this.state.bakery.map(product => <Card key={product.backeryId} imgUrl={product.backeryId} title={product.title} price={product.price} size={product.size} count={product.count}></Card>)}
+                        <Location></Location>
+                    </div>;
+                    {/* {this.renderSwitch(this.state.currentPage)} */}
                     {//} <div className="row row-cols-1 row-cols-md-3">
                         //    {/* {this.state.bakery.map(product => <div title={product.title}>{product.title}</div>)} */}
                         //   {this.state.bakery.map(product => <Card key={product.backeryId} imgUrl={product.img} title={product.title} price={product.price} size={product.size} count={product.count}></Card>)}

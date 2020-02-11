@@ -10,13 +10,6 @@ class Menu extends React.Component {
         this.state = {
 
         }
-        this.handleClick = this.props.switchHandler.bind(this);
-    }
-
-    handleClick(page) {
-        console.log("dddd");
-
-        // return page;
     }
 
     // toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
