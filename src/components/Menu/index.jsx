@@ -26,6 +26,7 @@ class Menu extends React.Component {
             // </React.Fragment>
 
             <React.Fragment>
+                <div id="nav">
                 <Navbar>
                     <Navbar.Brand href="#home">FUN HOME BAKERY</Navbar.Brand>
                     {/* {this.props.listArarry.map(list => <Link key={list.sort} to={list.url} className="nav-link" onClick={()=>this.handleClick("cakes")}>{list.title}</Link>)} */}
@@ -41,6 +42,7 @@ class Menu extends React.Component {
                         <Button variant="primary">Search</Button>
                     </Form>
                 </Navbar>
+                </div>
             </React.Fragment>
         )
     }

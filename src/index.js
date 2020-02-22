@@ -4,7 +4,8 @@ import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
 import Home from './components/Home';
-import { BrowserRouter, Route ,Redirect} from 'react-router-dom';
+import Contact from './components/Contact';
+import { BrowserRouter, Route } from 'react-router-dom';
 // import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 
@@ -22,7 +23,7 @@ import 'popper.js';
 // ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('content'));
 // ReactDOM.render(<BrowserRouter><Route exact path="/" component={App} /></BrowserRouter>, document.getElementById('content'));
 // ReactDOM.render(<BrowserRouter><Redirect from="/" exact to="/cakes" component={App} /></BrowserRouter>, document.getElementById('content'));
-ReactDOM.render(<BrowserRouter><Route exact path="/cakes" component={App} /><Route exact path="/home" component={Home} /></BrowserRouter>, document.getElementById('content'));
+ReactDOM.render(<BrowserRouter><Route exact path="/cakes" component={App} /><Route exact path="/home" component={Home} /><Route exact path="/contact" component={Contact} /></BrowserRouter>, document.getElementById('content'));
 // ReactDOM.render(<BrowserRouter><Route exact path="/home" component={Home} /></BrowserRouter>, document.getElementById('content'));
 
 

@@ -19,14 +19,14 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div id="nav">
-          <Menu listArarry={this.state.menuList} ></Menu>
-        </div>
+        <Menu listArarry={this.state.menuList} ></Menu>
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
-            {this.state.cakes.map((list,index)=><div className={(index==0)?"carousel-item active":"carousel-item"}  key={list.backeryId}><img src={require('../../assets/img/cakes/' + list.backeryId + '.png')} className="d-block w-100" alt="..."/> </div>)}
+            {this.state.cakes.map((list, index) => <div className={(index == 0) ? "carousel-item active" : "carousel-item"} key={list.backeryId}><img src={require('../../assets/img/cakes/' + list.backeryId + '.png')} className="d-block w-100" alt="..." /> </div>)}
           </div>
         </div>
+
+        <h1>純天然 · 安心 · 健康 · 不含防腐劑 · 無食品添加物</h1>
 
       </React.Fragment>
     )

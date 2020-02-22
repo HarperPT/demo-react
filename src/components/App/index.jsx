@@ -52,10 +52,9 @@ class App extends React.Component {
 
         return (
             <React.Fragment>
-                <div id="nav">
-                    <Menu listArarry={this.state.menuList} switchHandler={this.renderSwitch}></Menu>
-                    {/* <Menu listArarry={this.state.menuList}></Menu> */}
-                    {/* <Navbar>
+                <Menu listArarry={this.state.menuList} switchHandler={this.renderSwitch}></Menu>
+                {/* <Menu listArarry={this.state.menuList}></Menu> */}
+                {/* <Navbar>
                         <Navbar.Brand href="#home">FUN HOME BAKERY</Navbar.Brand>
                         {this.state.menuList.map(list => <Menu sort={list.sort} title={list.title} url={list.url} changeContent={this.renderSwitch()}></Menu>)}
                         <Form inline>
@@ -63,7 +62,6 @@ class App extends React.Component {
                             <Button variant="primary">Search</Button>
                         </Form>
                     </Navbar> */}
-                </div>
                 <div className="container">
                     <div className="row row-cols-1 row-cols-md-3">{this.state.bakery.map(product => <Card key={product.backeryId} imgUrl={product.backeryId} title={product.title} price={product.price} size={product.size} count={product.count}></Card>)}
                         <Location></Location>
