@@ -1,51 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Switch, Route } from 'react-router-dom';
-import { Navbar, FormControl, Button, Form } from 'react-bootstrap';
-
+import React from "react";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Menu extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuCate: props.menu
+    };
+  }
 
-        }
-    }
 
-    // toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
 
-    sortMenu(ar) {
-        return ar.sort(function (a, b) { return a.sort - b.sort });
-    }
+  sortMenu = ar => {
+    return ar.sort(function (a, b) {
+      return a.sort - b.sort;
+    });
+  }
 
-    render() {
-        return (
-            // <React.Fragment>
-            //     <Link key={this.props.sort} to={this.props.url} className="nav-link" onClick={()=>this.handleClick(this.props.title)}>{this.props.title}</Link>
-            //     {/* {this.state.menuList.map(list => <Link key={list.sort} to={list.url} className="nav-link">{list.title}</Link>)} */}
-            // </React.Fragment>
+  render() {
+    this.sortMenu(this.state.menuCate);
+    return (
+      <React.Fragment>
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{ "background-color": "#fff" }}>
+          <a className="navbar-brand" href="">
+            FUN HOME BAKERY
+          </a>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-            <React.Fragment>
-                <div id="nav">
-                <Navbar>
-                    <Navbar.Brand href="#home">FUN HOME BAKERY</Navbar.Brand>
-                    {/* {this.props.listArarry.map(list => <Link key={list.sort} to={list.url} className="nav-link" onClick={()=>this.handleClick("cakes")}>{list.title}</Link>)} */}
-                    {this.props.listArarry.map(list => <Link key={list.sort} to={list.url} className="nav-link" >{list.title}</Link>)}
-                    {/* <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-end" >
-                        <Navbar.Text>
-                            Signed in as: <a href="#login">Mark Otto</a>
-                        </Navbar.Text>
-                    </Navbar.Collapse> */}
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="primary">Search</Button>
-                    </Form>
-                </Navbar>
-                </div>
-            </React.Fragment>
-        )
-    }
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+              {this.state.menuCate.map(cate =>
+                <li key={cate.sort} className="nav-item" >
+                  <Link className="nav-link" to={cate.url}>{cate.title}</Link>
+                </li>)}
+            </ul>
+          </div>
+          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Login
+            </button>
+        </nav>
+
+      </React.Fragment>
+    );
+  }
 }
 
 export default Menu;
