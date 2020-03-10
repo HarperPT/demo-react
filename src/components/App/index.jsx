@@ -3,7 +3,7 @@ import React from "react";
 import Menu from "../Menu";
 import Cakes from "../../layouts/Cakes";
 import Home from "../../layouts/Home"
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -35,13 +35,14 @@ class App extends React.Component {
       <React.Fragment>
         <Router basename={process.env.PUBLIC_URL}>
           <Menu menu={this.state.menuList} ></Menu>
-          {/* <div className="container"> */}
-          {/* Page Home */}
-          <Route exact path="/home" component={() => <Home bakery={this.state.bakery}></Home>} />
-          {/* Page Cakes */}
-          <Route exact path="/cakes" component={() => <Cakes bakery={this.state.bakery} ></Cakes>} ></Route>
-          {/* <Route exact path="/" component={() => <Cakes bakery={this.state.bakery} ></Cakes>} ></Route> */}
-          {/* <Route exact path="/cakes" component={() =>
+          <Switch>
+            {/* Page Home */}
+            <Route exact path="/home" component={() => <Home bakery={this.state.bakery}></Home>} />
+
+            {/* Page Cakes */}
+            <Route exact path="/cakes" component={() => <Cakes bakery={this.state.bakery} ></Cakes>} ></Route>
+            {/* <Route exact path="/" component={() => <Cakes bakery={this.state.bakery} ></Cakes>} ></Route> */}
+            {/* <Route exact path="/cakes" component={() =>
               <div className="row row-cols-1 row-cols-md-3">
                 {this.state.bakery.map(product => (
                   <Card
@@ -53,7 +54,9 @@ class App extends React.Component {
                     count={product.count}>
                   </Card>))}
               </div>} /> */}
-          {/* </div> */}
+
+            <Route component={() => (<div>404 Not found </div>)} />
+          </Switch>
         </Router>
       </React.Fragment>
     );
