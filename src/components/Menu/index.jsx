@@ -23,6 +23,7 @@ class Menu extends React.Component {
     return (
       <React.Fragment>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{ "backgroundColor": "#fff" }}>
+          test
           <a className="navbar-brand" href="">
             FUN HOME BAKERY
           </a>
