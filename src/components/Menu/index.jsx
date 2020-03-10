@@ -22,7 +22,7 @@ class Menu extends React.Component {
     this.sortMenu(this.state.menuCate);
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{ "background-color": "#fff" }}>
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{ "backgroundColor": "#fff" }}>
           <a className="navbar-brand" href="">
             FUN HOME BAKERY
           </a>

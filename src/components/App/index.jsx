@@ -33,7 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Menu menu={this.state.menuList} ></Menu>
           {/* <div className="container"> */}
           {/* Page Home */}
