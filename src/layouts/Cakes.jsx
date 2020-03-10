@@ -5,6 +5,7 @@ import Card from '../components/Card';
 class Cakes extends React.Component {
 
     render() {
+        console.log("debug");
         return (<React.Fragment>
             <div className="container">
                 <div className="mt-5">

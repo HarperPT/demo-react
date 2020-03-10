@@ -1,5 +1,4 @@
 import React from "react";
-// import Card from "../Card";
 import Menu from "../Menu";
 import Cakes from "../../layouts/Cakes";
 import Home from "../../layouts/Home"
