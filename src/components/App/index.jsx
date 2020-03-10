@@ -34,7 +34,7 @@ class App extends React.Component {
 
     return (
       <React.Fragment>
-        <Router basename="/">
+        <Router basename={process.env.PUBLIC_URL}>
           <Menu menu={this.state.menuList} ></Menu>
           <Switch>
             {/* Page Home */}
