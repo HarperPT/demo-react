@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../Menu";
 import Cakes from "../../layouts/Cakes";
 import Home from "../../layouts/Home"
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect, useRouterHistory } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,13 +31,15 @@ class App extends React.Component {
   // demo-react
 
   render() {
+    const baseUrl = window.location.pathname;
     // console.log("url:", this.props.location.query.__firebase_request_key);
     console.log(window.hostname);
-    console.log(window.location);
+    console.log(window.location.pathname);
+    console.log(baseUrl);
 
     return (
       <React.Fragment>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename={baseUrl}>
           <Menu menu={this.state.menuList} ></Menu>
           <Switch>
             {/* Page Home */}
