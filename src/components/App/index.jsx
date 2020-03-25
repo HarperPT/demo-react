@@ -32,8 +32,8 @@ class App extends React.Component {
 
   render() {
     // console.log("url:", this.props.location.query.__firebase_request_key);
-    console.log(this.props.location);
-    console.log(window.location.search);
+    console.log(window.hostname);
+    console.log(window.location);
 
     return (
       <React.Fragment>
