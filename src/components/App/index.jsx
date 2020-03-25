@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../Menu";
 import Cakes from "../../layouts/Cakes";
 import Home from "../../layouts/Home"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,10 +28,11 @@ class App extends React.Component {
     };
 
   }
+  componentDidUpdate() {
+
+  }
 
   render() {
-    console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
-
     return (
       <React.Fragment>
         <Router basename={process.env.PUBLIC_URL}>
@@ -56,7 +57,8 @@ class App extends React.Component {
                   </Card>))}
               </div>} /> */}
 
-            <Route component={() => (<div>404 Not found </div>)} />
+            {/* <Route component={() => (<div>404 Not found </div>)} /> */}
+            <Redirect from="/" to="/home" />
           </Switch>
         </Router>
       </React.Fragment>
