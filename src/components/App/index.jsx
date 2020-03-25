@@ -28,11 +28,12 @@ class App extends React.Component {
     };
 
   }
-  componentDidUpdate() {
-
-  }
+  // demo-react
 
   render() {
+    // console.log("url:", this.props.location.query.__firebase_request_key);
+    console.log(this.props.location);
+
     return (
       <React.Fragment>
         <Router basename={process.env.PUBLIC_URL}>
