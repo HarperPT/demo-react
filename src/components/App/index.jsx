@@ -33,6 +33,7 @@ class App extends React.Component {
   render() {
     // console.log("url:", this.props.location.query.__firebase_request_key);
     console.log(this.props.location);
+    console.log(window.location.search);
 
     return (
       <React.Fragment>
@@ -59,7 +60,6 @@ class App extends React.Component {
               </div>} /> */}
 
             {/* <Route component={() => (<div>404 Not found </div>)} /> */}
-            <Redirect from="/" to="/home" />
           </Switch>
         </Router>
       </React.Fragment>
