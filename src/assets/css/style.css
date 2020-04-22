@@ -1,0 +1,274 @@
+
+/* import font */
+
+@font-face {
+    font-family: 'DINPro';
+    font-style: normal;
+    src: url(../fonts/DINPro-Regular.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'DINPro';
+    font-weight: bold;
+    src: url(../fonts/DINPro-Bold.otf) format('truetype');
+}
+
+*{
+	box-sizing: border-box;
+	font-family: 'DINPro';
+}
+
+:root {
+	--lightbox-radio-color: rgb(75, 186, 214);
+	--lightbox-label-color: rgb(35, 87, 100);
+	--lightbox-counter-size:30px;
+}
+
+/* Card */
+
+.card>*{
+    /* border: 1px solid slateblue; */
+}
+
+.card-col{
+border: 5px solid transparent;    
+}
+
+.card-photo{
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 10px;
+    /* height: fill-available; */
+    object-fit: cover;
+}
+
+.card-container{
+    position: relative;
+    margin-top: 7%;
+}
+
+.btn-cart {
+	box-shadow: -1px 10px 11px -7px #276873;
+	/* background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%); */
+	background-color:#599bb3;
+	border-radius:3px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:12px 15px;
+	text-decoration:none;
+	text-shadow:0px 2px 0px #3d768a;
+}
+.btn-cart:hover {
+    background-color:#458197;   
+    text-decoration: none;
+    color: white;
+}
+.btn-cart:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* Lightbox  */
+.lightbox {
+	/** Default lightbox to hidden */
+	/* display: none; */
+
+	/** Position and style */
+	position: fixed;
+	z-index: 90;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.lb-container {
+	max-width: 40%;
+	margin-top: 5%;
+	margin-left: 30%;
+	background-color: white;
+	padding: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#chk-lightbox{
+	position: absolute;
+	/* margin-top :100px; */
+	z-index: 9999;
+}
+
+.lb-close{
+	position: absolute;
+	margin-left:calc(40% - 35px);
+	margin-top: -30px;
+	z-index: 999;
+}
+
+.btn-cross{
+	width: 30px;
+	height: 30px;
+	border: 2px solid white;
+	background-color: black;
+	border-radius: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	/* z-index: 999; */
+}
+
+.btn-cross:hover{
+	cursor: pointer;
+	background-color: rgb(153, 153, 153);
+}
+
+.btn-cross::after{
+	content: 'x';
+	color: white;
+}
+
+
+.lb-img{
+max-height:300px;
+object-fit: cover;
+}
+
+.lb-spec *{ 
+	/* box-sizing: border-box; */
+	/* border: 1px solid seagreen; */
+}
+
+.lb-spec{
+	text-align: justify;
+	width: 100%;
+	margin-top: 5%;
+}
+
+.ul-spec,.li-spec{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.li-spec{
+	list-style-type:none;
+	border: 1px solid rgba(169, 169, 169, 0.445);
+	margin-top: 1%;
+}
+
+.li-spec:hover{
+	background-color: rgba(219, 234, 241, 0.507);;
+	cursor: pointer;
+	color: var(--lightbox-radio-color);
+}
+
+.li-spec>*{
+	margin-top:10px;
+}
+.li-spec>*:hover{
+	cursor: pointer;
+}
+
+.li-spec > label{
+	position: relative;
+	left:50px;
+	/* border: 5px solid darkgreen; */
+}
+/* Lightbox - radio */
+ul li input[type=radio]{
+	position: absolute;
+	visibility: hidden;
+  }
+
+ul li .rdo-spec{
+	display: block;
+	position: absolute;
+	border: 5px solid  var(--lightbox-radio-color);
+	border-radius: 100%;
+	height: 25px;
+	width: 25px;
+	top:0;
+	left: 5px;
+}
+
+ul li .rdo-spec::before {
+	display: block;
+	position: absolute;
+	content: '';
+	border-radius: 100%;
+	height: 10px;
+	width: 10px;
+	top: 5px;
+	left: 5px;
+	margin: auto; 
+	transform: translate(calc( -5px / 2 ) ,calc( -5px / 2 ));
+  }
+
+input[name=rdoCake]:checked ~ .rdo-spec {
+	border: 5px solid var(--lightbox-radio-color);
+ }
+  
+  input[name=rdoCake]:checked ~ .rdo-spec::before{
+	background: var(--lightbox-radio-color);
+  }
+  
+  input[name=rdoCake]:checked ~ label{
+	color: var(--lightbox-label-color);
+  }
+
+
+  /* Lightbox Footer */
+.lb-footer{
+	width: calc(100% + 40px);
+	height: 50px;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	position: relative;
+	bottom:-20px;
+	left: -20px;
+	background-color: rgba(209, 211, 212, 0.719);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.lb-footer *{
+	/* border:  2px solid rgb(223, 70, 70); */
+}
+
+.lb-counter >*{
+	width: var(--lightbox-counter-size);
+	height: var(--lightbox-counter-size);
+	margin: 1%;
+	text-align: center;
+}
+
+.btn-addcart{
+	border: 2px solid transparent;
+	border-radius: 30px;
+	width: 90%;
+}
+
+/* RWD */
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .myButton{
+        width: 100%;
+        text-align: center;
+        
+    }
+    
+ 
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .myButton{
+        width: 40%;
+        text-align: center;
+    }
+  }

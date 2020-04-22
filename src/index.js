@@ -5,6 +5,7 @@ import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import './assets/css/style.css';
 // import 'bootstrap/dist/css/'
 import "popper.js";
 

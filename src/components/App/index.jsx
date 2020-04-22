@@ -18,7 +18,7 @@ class App extends React.Component {
         { backeryId: "CC01", title: "75% Chocolate Cake Roll", price: "£10", describe: "", size: "2~3 people", img: "https://homebakefun.weebly.com/uploads/1/2/0/5/120551490/p396_orig.png", count: 0 },
         { backeryId: "BC03", title: "Earl Grey Milk Tea Cream Roll ", price: "£10", describe: "", size: "2~3 people", img: "https://homebakefun.weebly.com/uploads/1/2/0/5/120551490/p37_orig.png", count: 6 },
         { backeryId: "MC04", title: "Milk Cream Roll ", price: "£10", describe: "", size: "2~3 people", img: "https://homebakefun.weebly.com/uploads/1/2/0/5/120551490/editor/p823.png?1533156662", count: 5 },
-        { backeryId: "FC05", title: "Fruits Cake", price: "£20 - £25", describe: "", size: "6 inch for 2~3 people", img: "https://homebakefun.weebly.com/uploads/1/2/0/5/120551490/p827_orig.png", count: 1 }
+        { backeryId: "FC05", title: "Fruits Cake", price: "From £20", describe: "", size: "6 inch for 2~3 people", img: "https://homebakefun.weebly.com/uploads/1/2/0/5/120551490/p827_orig.png", count: 1 }
       ],
       currentPage: "CAKES",
       homeElements: [
@@ -31,15 +31,11 @@ class App extends React.Component {
   // demo-react
 
   render() {
-    const baseUrl = window.location.pathname;
-    // console.log("url:", this.props.location.query.__firebase_request_key);
-    console.log(window.hostname);
-    console.log(window.location.pathname);
-    console.log(baseUrl);
-
+    // const baseUrl = window.location.pathname;
     return (
       <React.Fragment>
-        <Router basename={baseUrl}>
+        {/* <Router basename={baseUrl}> */}
+        <Router>
           <Menu menu={this.state.menuList} ></Menu>
           <Switch>
             {/* Page Home */}
